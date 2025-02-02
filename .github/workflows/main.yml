@@ -2,7 +2,7 @@ name: Debugging workflow
 
 on:
   push:
-    branches: [ main, apathak4, agala2, kgondha ]
+    branches: [ main ]
 
 jobs:
   lint:

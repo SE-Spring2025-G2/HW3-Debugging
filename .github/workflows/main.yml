@@ -1,0 +1,27 @@
+name: Debugging workflow
+
+on:
+  push:
+    branches: [ main, apathak4, agala2, kgondha ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install debugging tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyflakes
+
+      - name: Run Pyflakes
+        run: |
+          # Run pyflakes on all Python files
+          pyflakes .

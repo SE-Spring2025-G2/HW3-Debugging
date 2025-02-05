@@ -28,4 +28,5 @@ jobs:
         
       - name: Run pylint
         run: |
+          cd ../..
           pylint $(git ls-files '*.py') > pylint_report.txt

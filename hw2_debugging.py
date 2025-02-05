@@ -1,5 +1,5 @@
 """
-Module for the random number functions.
+Module for the different sorting functions.
 """
 import rand
 
@@ -46,7 +46,7 @@ def bubble_sort(bubble_sort_arr):
     return bubble_sort_arr
 
 
-arr = rand.random_array([None] * 20)
+arr = rand.random_array([0] * 20)
 arr_out = bubble_sort(arr)
 
 print(arr_out)

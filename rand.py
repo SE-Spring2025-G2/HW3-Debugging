@@ -1,13 +1,11 @@
 """
-Module for importing subprocesses
+Module for making random number generators
 """
-import subprocess
+import secrets
 
 def random_array(arr):
-    """Function to generate random array"""
+    """Function to generate random array without subprocess"""
 
-    shuffled_num = None
-    for i, sorted_arr in enumerate(arr):
-        shuffled_num = subprocess.run(["shuf", "-i1-20", "-n1"], capture_output=True, check=False)
-        sorted_arr[i] = int(shuffled_num.stdout)
+    for i, _ in enumerate(arr):
+        arr[i] = secrets.randbelow(20) + 1
     return arr

@@ -35,18 +35,7 @@ def recombine(left_arr, right_arr):
 
     return merge_arr
 
-def bubble_sort(bubble_sort_arr):
-    """Function to use bubble sort"""
-
-    _n = len(bubble_sort_arr)
-    for i in range(_n):
-        for j in range(0, _n-i-1):
-            if bubble_sort_arr[j] > bubble_sort_arr[j+1]:
-                bubble_sort_arr[j], bubble_sort_arr[j+1] = bubble_sort_arr[j+1], bubble_sort_arr[j]
-    return bubble_sort_arr
-
-
 arr = rand.random_array([0] * 20)
-arr_out = bubble_sort(arr)
+arr_out = merge_sort(arr)
 
 print(arr_out)

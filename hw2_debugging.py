@@ -63,13 +63,39 @@ def recombine(left_arr, right_arr):
 
     return merge_arr
 
+def selection_sort(sel_sort_arr):
+    """
+    Sorts an array using the selection sort algorithm.
+
+    Args:
+        arr (list): The input array to be sorted.
+
+    Returns:
+        list: The sorted array.
+    """
+    # Get the length of the array
+    _n = len(sel_sort_arr)
+
+    # Iterate through the array to find the minimum element in each pass
+    for i in range(_n - 1):
+        # Assume the current element is the minimum
+        min_index = i
+        for j in range(i + 1, _n):
+            if sel_sort_arr[j] < sel_sort_arr[min_index]:
+                # Update the minimum index if a smaller element is found
+                min_index = j
+
+        # Swap the current element with the minimum element
+        sel_sort_arr[i], sel_sort_arr[min_index] = sel_sort_arr[min_index], sel_sort_arr[i]
+
+    return sel_sort_arr
 
 def bubble_sort(bubble_sort_arr):
     """Function to use bubble sort"""
 
-    n = len(bubble_sort_arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
+    _n = len(bubble_sort_arr)
+    for i in range(_n):
+        for j in range(0, _n-i-1):
             if bubble_sort_arr[j] > bubble_sort_arr[j+1]:
                 bubble_sort_arr[j], bubble_sort_arr[j+1] = bubble_sort_arr[j+1], bubble_sort_arr[j]
     return bubble_sort_arr

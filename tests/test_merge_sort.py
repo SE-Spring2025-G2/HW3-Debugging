@@ -1,5 +1,16 @@
-from hw2_debugging import merge_sort 
+from hw2_debugging import merge_sort
 
+def test_empty_list():
+    '''Test empty list edge case'''
+    assert merge_sort([]) == []
+
+def test_odd_length():
+    '''Test array with odd number of elements'''
+    assert merge_sort([5, 3, 1]) == [1, 3, 5]
+
+def test_even_length():
+    '''Test array with even number of elements'''
+    assert merge_sort([8, 2, 5, 3]) == [2, 3, 5, 8]
 
 def test_merge_sort_large_list():
     """Test merge_sort with a large random list."""
@@ -8,13 +19,11 @@ def test_merge_sort_large_list():
     expected = sorted(arr)  # Python's built-in sort for validation
     assert merge_sort(arr) == expected
 
-
 def test_merge_sort_negative_numbers():
     """Test merge_sort with negative and positive numbers."""
     arr = [-5, 3, -1, 0, -8, 7, 2, -3, 6]
     expected = sorted(arr)
     assert merge_sort(arr) == expected
-
 
 def test_merge_sort_floats():
     """Test merge_sort with a list containing floating-point numbers."""

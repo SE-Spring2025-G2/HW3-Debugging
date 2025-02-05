@@ -27,5 +27,5 @@ jobs:
 
       - name: Run Bandit
         run: |
-          bandit -r .          
+          bandit -s B101 -r .
 

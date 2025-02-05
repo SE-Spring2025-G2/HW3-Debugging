@@ -55,7 +55,7 @@ Solves the **N-Queens problem** using a backtracking algorithm. It ensures that 
 
 ## ⚙️ Workflows Folder (`.github/workflows`)
 This folder contains GitHub Actions workflows for:
-- **Static Code Analysis** (`pylint.yml`, `bandit.yml`, `pyflakes`): Identifies code quality issues and security vulnerabilities.
+- **Static Code Analysis** (`pylint.yml`, `bandit.yml`, `pyflakes.yml`): Identifies code quality issues and security vulnerabilities.
 - **Automated Testing** (`test_workflow.yml`): Runs `pytest` to validate implementations.
 - Every time someone commits to main, these workflows kick in to validate the programs.
 

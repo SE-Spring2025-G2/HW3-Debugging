@@ -1,0 +1,1 @@
+nqueens.py:1:1: 'os' imported but unused

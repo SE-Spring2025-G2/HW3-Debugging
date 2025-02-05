@@ -2,7 +2,7 @@ name: Bandit Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, agala2, kbgondha, aphatak4 ]
 
 jobs:
   bandit:

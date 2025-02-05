@@ -1,11 +1,11 @@
-name: Debugging workflow
+name: PyFlakes workflow
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  lint:
+  flakes:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

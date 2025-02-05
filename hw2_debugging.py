@@ -13,6 +13,9 @@ def merge_sort(merge_sort_arr):
     Returns:
         list: The sorted array.
     """
+    # Edge case: If an empty array is passed to the function
+    if len(merge_sort_arr) == 0:
+        return []
     # Base case: If the array has only one element, it is already sorted
     if len(merge_sort_arr) == 1:
         return merge_sort_arr

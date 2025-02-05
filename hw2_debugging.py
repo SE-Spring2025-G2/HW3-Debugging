@@ -9,10 +9,39 @@ def merge_sort(merge_sort_arr):
     if len(merge_sort_arr) == 1:
         return merge_sort_arr
 
+    # Calculate the middle index of the array
+    half = len(arr) // 2
     half = len(merge_sort_arr)//2
+
+    # Recursively sort the left and right halves and merge them
+    return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
 
     return recombine(merge_sort(merge_sort_arr[:half]), merge_sort(merge_sort_arr[half:]))
 
+def recombine(left_arr, right_arr):
+    """
+    Merges two sorted arrays into a single sorted array.
+
+    Args:
+        left_arr (list): The first sorted array.
+        right_arr (list): The second sorted array.
+
+    Returns:
+        list: The merged sorted array.
+    """
+    # Initialize indices for the left and right arrays
+    left_index = 0
+    right_index = 0
+
+    # Create a new array to store the merged result
+    merge_arr = [None] * (len(left_arr) + len(right_arr))
+
+    # Merge smaller elements first
+    while left_index < len(left_arr) and right_index < len(right_arr):
+        if left_arr[left_index] < right_arr[right_index]:
+            # Place the smaller element from the left array
+            merge_arr[left_index + right_index] = left_arr[left_index]
+            left_index += 1  # Increment the left index
 def recombine(left_arr, right_arr):
     """Function to recombine the arrays"""
 
@@ -24,6 +53,9 @@ def recombine(left_arr, right_arr):
             right_index += 1
             merge_arr[left_index + right_index] = left_arr[left_index]
         else:
+            # Place the smaller element from the right array
+            merge_arr[left_index + right_index] = right_arr[right_index]
+            right_index += 1  # Increment the right index
             left_index += 1
             merge_arr[left_index + right_index] = right_arr[right_index]
 

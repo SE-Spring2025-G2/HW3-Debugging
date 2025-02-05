@@ -28,8 +28,17 @@ def recombine(leftArr, rightArr):
 
     return mergeArr
 
+def BubbleSort(arr):
+    n = len(arr)
+    for indx_1 in range(n):
+        for J in range(0, n-indx_1-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+
 arr = rand.random_array([None] * 20)
-arr_out = mergeSort(arr)
+arr_out = bubble_sort(arr)
 
 print(arr_out)
 

@@ -24,7 +24,7 @@ jobs:
       - name: Run Pyflakes
         run: |
           # Run pyflakes on all Python files
-          pyflakes .
+          pyflakes . > pyflakes_report.txt
         
       - name: Run pylint
         run: |

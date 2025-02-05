@@ -29,7 +29,7 @@ def recombine(leftArr, rightArr):
     return mergeArr
 
 def selection_sort(arr):
-    n = len(arr)
+    length_arr = len(arr)
 
     for i in range(n - 1):
         min_index = i

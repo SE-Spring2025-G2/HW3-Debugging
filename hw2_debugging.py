@@ -4,19 +4,25 @@ Module for the different sorting functions.
 import rand
 
 def merge_sort(merge_sort_arr):
-    """Function to use merge sort"""
+    """
+    Recursively sorts an array using the merge sort algorithm.
 
+    Args:
+        arr (list): The input array to be sorted.
+
+    Returns:
+        list: The sorted array.
+    """
+    # Base case: If the array has only one element, it is already sorted
     if len(merge_sort_arr) == 1:
         return merge_sort_arr
 
     # Calculate the middle index of the array
-    half = len(arr) // 2
-    half = len(merge_sort_arr)//2
+    half = len(merge_sort_arr) // 2
 
     # Recursively sort the left and right halves and merge them
-    return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
-
     return recombine(merge_sort(merge_sort_arr[:half]), merge_sort(merge_sort_arr[half:]))
+
 
 def recombine(left_arr, right_arr):
     """
@@ -42,30 +48,21 @@ def recombine(left_arr, right_arr):
             # Place the smaller element from the left array
             merge_arr[left_index + right_index] = left_arr[left_index]
             left_index += 1  # Increment the left index
-def recombine(left_arr, right_arr):
-    """Function to recombine the arrays"""
-
-    left_index = 0
-    right_index = 0
-    merge_arr = [None] * (len(left_arr) + len(right_arr))
-    while left_index < len(left_arr) and right_index < len(right_arr):
-        if left_arr[left_index] < right_arr[right_index]:
-            right_index += 1
-            merge_arr[left_index + right_index] = left_arr[left_index]
         else:
             # Place the smaller element from the right array
             merge_arr[left_index + right_index] = right_arr[right_index]
             right_index += 1  # Increment the right index
-            left_index += 1
-            merge_arr[left_index + right_index] = right_arr[right_index]
 
+    # Append any remaining elements from the right array
     for i in range(right_index, len(right_arr)):
-        merge_arr[left_index + right_index] = right_arr[i]
+        merge_arr[left_index + i] = right_arr[i]  # Corrected index
 
+    # Append any remaining elements from the left array
     for i in range(left_index, len(left_arr)):
-        merge_arr[left_index + right_index] = left_arr[i]
+        merge_arr[right_index + i] = left_arr[i]  # Corrected index
 
     return merge_arr
+
 
 def bubble_sort(bubble_sort_arr):
     """Function to use bubble sort"""
@@ -79,6 +76,6 @@ def bubble_sort(bubble_sort_arr):
 
 
 arr = rand.random_array([0] * 20)
-arr_out = bubble_sort(arr)
+arr_out = merge_sort(arr)
 
 print(arr_out)

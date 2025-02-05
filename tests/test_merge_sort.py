@@ -1,4 +1,3 @@
-import pytest
 from hw2_debugging import merge_sort 
 
 
@@ -20,5 +19,23 @@ def test_merge_sort_negative_numbers():
 def test_merge_sort_floats():
     """Test merge_sort with a list containing floating-point numbers."""
     arr = [3.1, 2.4, 5.6, 1.2, 4.9, 3.7]
+    expected = sorted(arr)
+    assert merge_sort(arr) == expected
+
+def test_merge_sort_if_sorted():
+    """Test the merge sort function"""
+    arr = [1, 2, 3, 4, 5]
+    expected = sorted(arr)
+    assert merge_sort(arr) == expected
+
+def test_merge_sort_duplicate_values():
+    """Test the merge sort function with duplicate values"""
+    arr = [11, 2, 7, 11, 4]
+    expected = sorted(arr)
+    assert merge_sort(arr) == expected
+
+def test_merge_sort_reverse_order():
+    """Test the merge sort function with values in reverse order"""
+    arr = [5, 4, 3, 2, 1]
     expected = sorted(arr)
     assert merge_sort(arr) == expected
